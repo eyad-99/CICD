@@ -95,11 +95,19 @@ jobs:
 
           $publishPath = (Resolve-Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}").Path
 
+          $publishUrl = $publishProfile.publishUrl
+
+          if ($publishUrl -notmatch "^https://") {
+            $publishUrl = "https://$publishUrl"
+          }
+
+          $msdeployUrl = "$publishUrl/msdeploy.axd"
+
           Write-Host "Publish path:"
           Write-Host $publishPath
 
-          Write-Host "MSDeploy URL:"
-          Write-Host $publishProfile.publishUrl
+          Write-Host "MSDeploy endpoint:"
+          Write-Host $msdeployUrl
 
           Write-Host "Username:"
           Write-Host $publishProfile.userName
@@ -113,9 +121,8 @@ jobs:
           & $msdeploy `
             -verb:sync `
             "-source:contentPath=$publishPath" `
-            "-dest:auto,ComputerName=$($publishProfile.publishUrl),UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
+            "-dest:contentPath=site\wwwroot,ComputerName=$msdeployUrl,UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
 
           if ($LASTEXITCODE -ne 0) {
             throw "MSDeploy failed with exit code $LASTEXITCODE"
           }
-
