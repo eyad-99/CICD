@@ -126,3 +126,4 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             throw "MSDeploy failed with exit code $LASTEXITCODE"    
           }
+   
