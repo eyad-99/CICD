@@ -124,5 +124,5 @@ jobs:
             "-dest:contentPath=.,ComputerName=$msdeployUrl,UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
 
           if ($LASTEXITCODE -ne 0) {
-            throw "MSDeploy failed with exit code $LASTEXITCODE"
+            throw "MSDeploy failed with exit code $LASTEXITCODE"    
           }
