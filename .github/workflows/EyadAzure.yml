@@ -93,6 +93,11 @@ jobs:
             throw "MSDeploy publish profile was not found."
           }
 
+          $publishPath = (Resolve-Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}").Path
+
+          Write-Host "Publish path:"
+          Write-Host $publishPath
+
           Write-Host "MSDeploy URL:"
           Write-Host $publishProfile.publishUrl
 
@@ -107,7 +112,7 @@ jobs:
 
           & $msdeploy `
             -verb:sync `
-            "-source:contentPath=${{ env.AZURE_WEBAPP_PACKAGE_PATH }}" `
+            "-source:contentPath=$publishPath" `
             "-dest:auto,ComputerName=$($publishProfile.publishUrl),UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
 
           if ($LASTEXITCODE -ne 0) {
