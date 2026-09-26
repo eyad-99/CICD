@@ -69,7 +69,7 @@ jobs:
       - name: Install Web Deploy
         shell: powershell
         run: |
-          choco install webdeploy -y --no-progress       
+          choco install webdeploy -y --no-progress          
 
       - name: Deploy using MSDeploy
         shell: powershell
