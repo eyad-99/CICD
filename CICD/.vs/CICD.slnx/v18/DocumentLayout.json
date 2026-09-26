@@ -34,8 +34,7 @@
               "RelativeToolTip": "CICD\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-26T14:15:15.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-26T14:15:15.25Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "CICD\\Controllers\\WeatherForecastController.cs",
               "ToolTip": "G:\\CICD\\CICD\\CICD\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "CICD\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-26T14:15:16.524Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "CICD\\WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-26T14:15:13.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-26T14:15:13.123Z"
             }
           ]
         }
