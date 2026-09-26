@@ -8,7 +8,7 @@ namespace CICD.Controllers
     {
         private static readonly string[] Summaries =
         [
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching","TEST","YEST","EYAD"
+            "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE", "EEEEEE","EEEEEE","EEEEEE","EEEEEE"
         ];
 
         [HttpGet(Name = "GetWeatherForecast")]
