@@ -72,8 +72,10 @@ jobs:
           tenant-id: ${{ vars.EyadAzure_TENANT_ID_B414 }}
           subscription-id: ${{ vars.EyadAzure_SUBSCRIPTION_ID_B414 }}
 
-      - name: Deploy to Azure WebApp
-        uses: azure/webapps-deploy@v3
-        with:
-            app-name: ${{ env.AZURE_WEBAPP_NAME }}
-            package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        - name: Deploy to Azure WebApp
+            run: |
+            Compress-Archive -Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\*" -DestinationPath "app.zip" -Force
+            az webapp deployment source config-zip `
+              --resource-group "azureapp-auto-alerts-ce9349-seifhendawy1_gmail_com" `
+              --name "${{ env.AZURE_WEBAPP_NAME }}" `
+              --src "app.zip"
