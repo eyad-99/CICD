@@ -96,8 +96,8 @@ jobs:
           Write-Host "MSDeploy URL:"
           Write-Host $publishProfile.publishUrl
 
-          Write-Host "IIS Application:"
-          Write-Host $publishProfile.IISApp
+          Write-Host "Username:"
+          Write-Host $publishProfile.userName
 
           $msdeploy = "${env:ProgramFiles}\IIS\Microsoft Web Deploy V3\msdeploy.exe"
 
@@ -108,8 +108,7 @@ jobs:
           & $msdeploy `
             -verb:sync `
             "-source:contentPath=${{ env.AZURE_WEBAPP_PACKAGE_PATH }}" `
-            "-dest:auto,ComputerName=$($publishProfile.publishUrl),UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic" `
-            "-setParam:name='IIS Web Application Name',value='$($publishProfile.IISApp)'"
+            "-dest:auto,ComputerName=$($publishProfile.publishUrl),UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
 
           if ($LASTEXITCODE -ne 0) {
             throw "MSDeploy failed with exit code $LASTEXITCODE"
