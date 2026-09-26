@@ -72,9 +72,8 @@ jobs:
           tenant-id: ${{ vars.EyadAzure_TENANT_ID_B414 }}
           subscription-id: ${{ vars.EyadAzure_SUBSCRIPTION_ID_B414 }}
 
-      - app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-        clean: true
+      - name: Deploy to Azure WebApp
+        uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+            app-name: ${{ env.AZURE_WEBAPP_NAME }}
+            package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
