@@ -72,7 +72,7 @@ jobs:
           tenant-id: ${{ vars.EyadAzure_TENANT_ID_B414 }}
           subscription-id: ${{ vars.EyadAzure_SUBSCRIPTION_ID_B414 }}
 
-        - name: Deploy to Azure WebApp
+      - name: Deploy to Azure WebApp
             run: |
             Compress-Archive -Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\*" -DestinationPath "app.zip" -Force
             az webapp deployment source config-zip `
