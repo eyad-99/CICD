@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\CICD\\CICD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|g:\\cicd\\cicd\\cicd\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|solutionrelative:cicd\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|g:\\cicd\\cicd\\cicd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|solutionrelative:cicd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|g:\\cicd\\cicd\\cicd\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EA0C29-BC73-23FF-12D8-00993AA9068C}|CICD\\CICD.csproj|solutionrelative:cicd\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\CICD\\CICD\\CICD\\Program.cs",
+              "RelativeDocumentMoniker": "CICD\\Program.cs",
+              "ToolTip": "G:\\CICD\\CICD\\CICD\\Program.cs",
+              "RelativeToolTip": "CICD\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T14:15:15.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "G:\\CICD\\CICD\\CICD\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "CICD\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "G:\\CICD\\CICD\\CICD\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "CICD\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T14:15:16.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "G:\\CICD\\CICD\\CICD\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "CICD\\WeatherForecast.cs",
+              "ToolTip": "G:\\CICD\\CICD\\CICD\\WeatherForecast.cs",
+              "RelativeToolTip": "CICD\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T14:15:13.123Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
