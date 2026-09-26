@@ -1,13 +1,10 @@
-name: Build and deploy .NET Core application to Web App EyadAzure
+
+name: Build and deploy CICD to EyadAzure
 
 on:
   push:
     branches:
       - main
-
-permissions:
-  id-token: write
-  contents: read
 
 env:
   AZURE_WEBAPP_NAME: EyadAzure
@@ -18,13 +15,13 @@ env:
 
 jobs:
   build:
-    environment: EyadAzure_Env
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
@@ -39,24 +36,28 @@ jobs:
         run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
 
       - name: Publish
-        run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+        run: dotnet publish "${{ env.WORKING_DIRECTORY }}" `
+          --configuration ${{ env.CONFIGURATION }} `
+          --no-build `
+          --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
       - name: Show published files
         run: dir "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
-      - name: Publish Artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: webapp
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
   deploy:
-    environment: EyadAzure_Env
     runs-on: windows-latest
     needs: build
+    environment:
+     name: EyadAzure_Env
 
     steps:
-      - name: Download artifact from build job
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: webapp
@@ -65,20 +66,9 @@ jobs:
       - name: Show downloaded files
         run: dir "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
-      - name: Azure Login
-        uses: azure/login@v2
+      - name: Deploy using Web Deploy publish profile
+        uses: azure/webapps-deploy@v3
         with:
-          client-id: ${{ vars.EyadAzure_CLIENT_ID_B414 }}
-          tenant-id: ${{ vars.EyadAzure_TENANT_ID_B414 }}
-          subscription-id: ${{ vars.EyadAzure_SUBSCRIPTION_ID_B414 }}
-
-      - name: Deploy to Azure WebApp
-        run: |
-          Compress-Archive -Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\*" -DestinationPath "app.zip" -Force
-          az webapp deploy `
-            --resource-group "azureapp-auto-alerts-ce9349-seifhendawy1_gmail_com" `
-            --name "${{ env.AZURE_WEBAPP_NAME }}" `
-            --src-path "app.zip" `
-            --type zip `
-            --clean true `
-            --restart true
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
