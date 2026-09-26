@@ -1,0 +1,13 @@
+GitHub Actions is GitHub's built-in CI/CD automation system.
+
+In simple terms:
+
+When something happens in your GitHub repository → automatically run some commands.
+
+Concept	Meaning
+Workflow	The automation definition
+Event	What triggers it, e.g. push, pull_request
+Job	A group of tasks
+Step	One task inside a job
+Runner	The machine that executes the job
+Action	A reusable piece of automation
