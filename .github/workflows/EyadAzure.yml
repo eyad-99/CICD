@@ -121,7 +121,7 @@ jobs:
           & $msdeploy `
             -verb:sync `
             "-source:contentPath=$publishPath" `
-            "-dest:contentPath=site\wwwroot,ComputerName=$msdeployUrl,UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
+            "-dest:contentPath=.,ComputerName=$msdeployUrl,UserName=$($publishProfile.userName),Password=$($publishProfile.userPWD),AuthType=Basic"
 
           if ($LASTEXITCODE -ne 0) {
             throw "MSDeploy failed with exit code $LASTEXITCODE"
