@@ -110,7 +110,7 @@ jobs:
           Write-Host $msdeployUrl
 
           Write-Host "Username:"
-          Write-Host $publishProfile.userName
+          Write-Host $publishProfile.userName    
 
           $msdeploy = "${env:ProgramFiles}\IIS\Microsoft Web Deploy V3\msdeploy.exe"
 
